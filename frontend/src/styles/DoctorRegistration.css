@@ -1,0 +1,208 @@
+.doctor-registration{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    color:white;
+
+    margin-top:20px;
+
+}
+
+.doctor-title{
+
+    color:#4da3ff;
+
+    margin-bottom:25px;
+
+}
+
+.doctor-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.doctor-input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+.doctor-input::placeholder{
+
+    color:#c8d5e5;
+
+}
+
+.doctor-btn{
+
+    margin-top:30px;
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+.doctor-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+.doctor-success{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:#0f5132;
+
+    text-align:center;
+
+}
+
+.doctor-success h2{
+
+    color:#80ffbc;
+
+}
+/* LIGHT MODE */
+
+.light-dashboard .doctor-registration{
+
+    background:white;
+
+    color:#111827;
+
+    border:1px solid #dbeafe;
+
+}
+
+.light-dashboard .doctor-input{
+
+    background:white;
+
+    color:#111827;
+
+    border:1px solid #cbd5e1;
+
+}
+
+.light-dashboard .doctor-input::placeholder{
+
+    color:#64748b;
+
+}
+
+.light-dashboard textarea{
+
+    background:white;
+
+    color:#111827;
+
+}
+
+.light-dashboard select{
+
+    background:white;
+
+    color:#111827;
+
+}
+
+.light-dashboard .doctor-success{
+
+    background:#dcfce7;
+
+    color:#166534;
+
+}
+.doctor-input option{
+    background: #ffffff;
+    color: #222;
+}
+
+.dark-dashboard .doctor-input:focus{
+    color: white;
+}
+
+.light-dashboard .doctor-input:focus{
+    color: #111827;
+}
+
+
+/* Dropdown list */
+.doctor-input option{
+    background: white;
+    color: black;
+}
+.light-dashboard .doctor-input{
+    background:#ffffff;
+    color:#111827;
+    border:1px solid #cbd5e1;
+}
+
+.light-dashboard .doctor-input::placeholder{
+    color:#64748b;
+}
+
+.light-dashboard input::placeholder {
+    color: #666666;
+}
+
+.dark-dashboard .doctor-input{
+    background:#263449;
+    color:#ffffff;
+    border:1px solid #334155;
+}
+
+.dark-dashboard .doctor-input::placeholder{
+    color:#cfd8e3;
+}
+
+.dark-dashboard input::placeholder {
+    color: #cfd8e3;
+}

@@ -1,0 +1,961 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+/* ============================
+   MAIN PAGE
+============================ */
+
+.welcome-screen{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+    transition:.4s;
+
+}
+
+/* ============================
+   LIGHT MODE
+============================ */
+
+.welcome-screen.light{
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(59,130,246,.18),
+    transparent 28%),
+
+    radial-gradient(circle at top right,
+    rgba(20,184,166,.14),
+    transparent 30%),
+
+    linear-gradient(
+        135deg,
+        #edf5ff 0%,
+        #ffffff 45%,
+        #f5f9ff 100%
+    );
+
+}
+
+/* ============================
+   DARK MODE
+============================ */
+
+.welcome-screen.dark{
+
+    background:
+
+    radial-gradient(circle at top left,
+    rgba(37,99,235,.18),
+    transparent 30%),
+
+    radial-gradient(circle at top right,
+    rgba(20,184,166,.12),
+    transparent 30%),
+
+    linear-gradient(
+        135deg,
+        #071328,
+        #0f172a
+    );
+
+}
+
+/* ============================
+   LEFT GLOW
+============================ */
+
+.welcome-screen::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:340px;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(180,210,255,.35),
+        transparent
+    );
+
+}
+
+/* ============================
+   RIGHT GLOW
+============================ */
+
+.welcome-screen::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+
+    top:0;
+
+    width:300px;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        -90deg,
+        rgba(220,235,255,.28),
+        transparent
+    );
+
+}
+
+/* ============================
+   NETWORK DOTS
+============================ */
+
+.network-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(
+        rgba(37,99,235,.12) 1px,
+        transparent 1px
+    );
+
+    background-size:70px 70px;
+
+    opacity:.6;
+
+}
+
+/* ============================
+   ICONS
+============================ */
+
+.left-hospital::before{
+
+    content:"🏥";
+
+    position:absolute;
+
+    left:25px;
+
+    bottom:230px;
+
+    font-size:250px;
+
+    opacity:.03;
+
+}
+
+.right-security::before{
+
+    content:"🛡️";
+
+    position:absolute;
+
+    right:80px;
+
+    top:220px;
+
+    font-size:220px;
+
+    opacity:.03;
+
+}
+
+/* ============================
+   BLUE WAVE
+============================ */
+
+.bottom-wave{
+
+    position:absolute;
+
+    bottom:-120px;
+
+    left:-5%;
+
+    width:110%;
+
+    height:320px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0d47d9,
+        #0833a8
+    );
+
+    border-top-left-radius:50% 100%;
+    border-top-right-radius:50% 100%;
+
+}
+/* ============================
+   THEME TOGGLE
+============================ */
+
+.theme-box{
+
+    position:absolute;
+
+    top:25px;
+
+    right:35px;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(37,99,235,.12);
+
+    border-radius:50px;
+
+    padding:14px 24px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.08);
+
+    z-index:100;
+
+}
+
+.dark .theme-box{
+
+    background:rgba(30,41,59,.95);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+}
+
+.toggle{
+
+    position:relative;
+
+    width:55px;
+
+    height:28px;
+
+}
+
+.toggle input{
+
+    display:none;
+
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#dbeafe;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:22px;
+
+    height:22px;
+
+    left:3px;
+
+    top:3px;
+
+    background:#2563eb;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+}
+
+.toggle input:checked + .slider::before{
+
+    transform:translateX(27px);
+
+}
+
+/* ============================
+   MAIN CONTENT
+============================ */
+
+.main-content{
+
+    position:relative;
+
+    z-index:10;
+
+    width:90%;
+
+    margin:auto;
+
+    padding-top:15px;
+
+    text-align:center;
+
+}
+
+/* ============================
+   LOGO
+============================ */
+
+.medical-logo{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #14b8a6
+        );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+        0 18px 40px rgba(37,99,235,.35);
+
+}
+
+.medical-logo span{
+
+    color:white;
+
+    font-size:58px;
+
+}
+
+/* ============================
+   BRAND
+============================ */
+
+.brand-name{
+
+    margin-top:18px;
+
+    color:#2563eb;
+
+    font-size:48px;
+
+    font-weight:800;
+
+}
+
+.dark .brand-name{
+
+    color:#60a5fa;
+
+}
+
+.brand-subtitle{
+
+    margin-top:5px;
+
+    color:#14b8a6;
+
+    letter-spacing:5px;
+
+    font-weight:600;
+
+}
+
+.dark .brand-subtitle{
+
+    color:#2dd4bf;
+
+}
+
+/* ============================
+   TITLE
+============================ */
+
+.main-title{
+    font-size: clamp(24px,2.6vw,42px);
+    max-width: 900px;
+    margin: 22px auto 0;
+    line-height: 1.15;
+    font-weight:800;
+    color:#173c79;
+}
+
+.dark .main-title{
+
+    color:white;
+
+}
+
+/* ============================
+   TAGLINE
+============================ */
+
+.tagline-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-top:16px;
+
+}
+
+.tag-line{
+
+    width:90px;
+
+    height:2px;
+
+    background:#60a5fa;
+
+}
+
+.tagline-container p{
+
+    color:#2563eb;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.dark .tagline-container p{
+
+    color:#93c5fd;
+
+}
+/* ============================
+   ENTER BUTTON
+============================ */
+
+.enter-btn{
+
+    margin-top:22px;
+
+    border:none;
+
+    padding:16px 46px;
+
+    border-radius:60px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #0f5fff
+        );
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+        0 12px 30px rgba(37,99,235,.35);
+
+}
+
+.enter-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 25px 45px rgba(37,99,235,.45);
+
+}
+
+/* ============================
+   FEATURE CARDS
+============================ */
+
+.cards{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:18px auto 0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:stretch;
+
+    gap:30px;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+/* ============================
+   CARD
+============================ */
+
+.card{
+
+    flex:1;
+
+    max-width:390px;
+
+    border-radius:28px;
+
+    padding:32px 28px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    backdrop-filter:blur(12px);
+
+}
+
+/* ---------- LIGHT ---------- */
+
+.light .card{
+
+    background:#ffffff;
+
+    border:1px solid #dbeafe;
+
+    box-shadow:
+        0 15px 35px rgba(15,23,42,.08);
+
+}
+
+/* ---------- DARK ---------- */
+
+.dark .card{
+
+    background:#1e293b;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.28);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 28px 55px rgba(37,99,235,.20);
+
+}
+
+/* ============================
+   CARD ICON
+============================ */
+
+.card-icon{
+
+    width:64px;
+
+    height:64px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:30px;
+
+}
+
+.blue{
+
+    background:#2563eb;
+
+}
+
+.green{
+
+    background:#14b8a6;
+
+}
+
+.purple{
+
+    background:#8b5cf6;
+
+}
+
+/* ============================
+   CARD TITLE
+============================ */
+
+.light .card h3{
+
+    color:#0f172a;
+
+}
+
+.dark .card h3{
+
+    color:white;
+
+}
+
+.card h3{
+
+    margin:22px 0 18px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+/* ============================
+   CARD TEXT
+============================ */
+
+.light .card p{
+
+    color:#475569;
+
+}
+
+.dark .card p{
+
+    color:#cbd5e1;
+
+}
+
+.card p{
+
+    font-size:17px;
+
+    line-height:1.7;
+
+}
+
+/* ============================
+   COLORED LINES
+============================ */
+
+.card-line{
+
+    width:70px;
+
+    height:4px;
+
+    margin:22px auto 0;
+
+    border-radius:20px;
+
+}
+
+.blue-line{
+
+    background:#2563eb;
+
+}
+
+.green-line{
+
+    background:#14b8a6;
+
+}
+
+.purple-line{
+
+    background:#8b5cf6;
+
+}
+/* ============================
+   FOOTER
+============================ */
+
+.footer{
+
+    position:relative;
+
+    z-index:20;
+
+    text-align:center;
+
+    color:white;
+
+    padding:40px 0 60px;
+
+}
+
+.footer-shield{
+
+    font-size:36px;
+
+    margin-bottom:12px;
+
+}
+
+.footer-content{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.footer-divider{
+
+    width:90px;
+
+    height:2px;
+
+    background:rgba(255,255,255,.55);
+
+}
+
+/* ============================
+   BOTTOM WAVE
+============================ */
+
+.bottom-wave{
+
+    position:absolute;
+
+    left:-5%;
+
+    bottom:-140px;
+
+    width:110%;
+
+    height:330px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d47d9,
+            #0833a8
+        );
+
+    border-top-left-radius:50% 100%;
+    border-top-right-radius:50% 100%;
+
+    z-index:0;
+
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+
+@media(max-width:1100px){
+
+    .cards{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .card{
+
+        max-width:650px;
+
+        width:100%;
+
+    }
+
+    .theme-box{
+
+        transform:scale(.9);
+
+        top:20px;
+
+        right:20px;
+
+    }
+
+    .brand-name{
+
+        font-size:40px;
+
+    }
+
+    .main-title{
+
+        font-size:42px;
+
+    }
+
+    .enter-btn{
+    padding:16px 48px;
+    font-size:21px;
+    margin-top:25px;
+}
+
+}
+
+@media(max-width:768px){
+
+    .main-content{
+
+        width:95%;
+
+    }
+
+    .medical-logo{
+
+        width:78px;
+
+        height:78px;
+
+    }
+
+    .medical-logo span{
+
+        font-size:42px;
+
+    }
+
+    .brand-name{
+
+        font-size:32px;
+
+    }
+
+    .brand-subtitle{
+
+        font-size:14px;
+
+        letter-spacing:3px;
+
+    }
+
+    .main-title{
+
+        font-size:32px;
+
+    }
+
+    .tagline-container{
+
+        flex-direction:column;
+
+        gap:10px;
+
+    }
+
+    .tag-line{
+
+        width:60px;
+
+    }
+
+    .enter-btn{
+
+        width:90%;
+
+        max-width:320px;
+
+        font-size:20px;
+
+    }
+
+    .card{
+
+        padding:24px 20px;
+
+    }
+
+    .card h3{
+
+        font-size:24px;
+
+    }
+
+    .card p{
+
+        font-size:15px;
+
+    }
+
+    .footer-content{
+
+        flex-direction:column;
+
+        gap:10px;
+
+    }
+
+    .footer-divider{
+
+        width:60px;
+
+    }
+
+}

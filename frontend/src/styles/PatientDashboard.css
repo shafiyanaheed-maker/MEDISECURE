@@ -1,0 +1,673 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:#071328;
+}
+
+.patient-dashboard{
+    min-height:100vh;
+    padding:30px;
+}
+
+/* =======================
+   DARK MODE
+======================= */
+
+.patient-dashboard.dark{
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(37,99,235,.20),
+    transparent 30%),
+
+    radial-gradient(circle at top right,
+    rgba(20,184,166,.15),
+    transparent 30%),
+
+    linear-gradient(
+        135deg,
+        #071328,
+        #0f172a
+    );
+
+    color:white;
+}
+
+/* =======================
+   LIGHT MODE
+======================= */
+
+.patient-dashboard.light{
+
+    background:#f4f8ff;
+
+    color:#0f172a;
+
+}
+
+/* =======================
+   NAVBAR
+======================= */
+
+.dashboard-navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.brand-logo{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #14b8a6
+    );
+
+}
+
+.brand h2{
+
+    font-size:42px;
+
+    color:#2f6cff;
+
+}
+
+.brand span{
+
+    color:#15b8a6;
+
+    letter-spacing:3px;
+
+    font-size:14px;
+
+}
+
+/* =======================
+   THEME TOGGLE
+======================= */
+
+.theme-toggle{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.switch{
+
+    position:relative;
+
+    width:58px;
+
+    height:30px;
+
+}
+
+.switch input{
+
+    display:none;
+
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:30px;
+
+    background:#5b6475;
+
+    cursor:pointer;
+
+}
+
+.slider:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:24px;
+
+    height:24px;
+
+    left:3px;
+
+    top:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    transition:.3s;
+
+}
+
+.switch input:checked + .slider{
+
+    background:#2563eb;
+
+}
+
+.switch input:checked + .slider:before{
+
+    transform:translateX(28px);
+
+}
+
+/* =======================
+   HEADER
+======================= */
+
+.dashboard-header{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 28px;
+
+    border-radius:40px;
+
+    background:rgba(20,184,166,.15);
+
+    color:#14b8a6;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+}
+
+.dashboard-header h1{
+
+    font-size:54px;
+
+    margin-bottom:15px;
+
+}
+
+.dashboard-header p{
+
+    opacity:.8;
+
+    font-size:18px;
+
+}
+
+/* =======================
+   BACK BUTTON
+======================= */
+
+.back-button{
+
+    padding:12px 28px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:white;
+
+    cursor:pointer;
+
+    margin-bottom:25px;
+
+}
+/* ===========================
+   MAIN GRID
+=========================== */
+
+.dashboard-main{
+
+    width:95%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    background:#1b2436;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+}
+
+.patient-dashboard.light .card{
+
+    background:white;
+
+    color:#111827;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.35);
+
+}
+
+/* ===========================
+   CARD TITLE
+=========================== */
+
+.card h2{
+
+    color:#1dd3b0;
+
+    margin-bottom:25px;
+
+    font-size:24px;
+
+}
+
+/* ===========================
+   INFO ROW
+=========================== */
+
+.info-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:15px;
+
+    padding:12px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+.patient-dashboard.light .info-row{
+
+    border-color:#e5e7eb;
+
+}
+
+.info-row span{
+
+    color:#9ca3af;
+
+    font-size:15px;
+
+}
+
+.info-row strong{
+
+    color:white;
+
+    font-weight:700;
+
+    text-align:right;
+
+    max-width:55%;
+
+    word-break:break-word;
+
+}
+.patient-dashboard.light .info-row strong{
+
+    color:#111827;
+
+    font-weight:600;
+
+}
+
+.patient-dashboard.light .info-row span{
+
+    color:#475569;
+
+}
+
+
+
+
+/* ===========================
+   PATIENT CARD
+=========================== */
+
+.patient-card{
+
+    min-height:520px;
+
+}
+
+/* ===========================
+   VISIT CARD
+=========================== */
+
+.visit-card{
+
+    min-height:520px;
+
+}
+
+/* ===========================
+   SENSOR CARD
+=========================== */
+
+.sensor-card{
+
+    min-height:520px;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1100px){
+
+.dashboard-main{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* ===========================
+   TIMELINES
+=========================== */
+
+.timeline-container{
+
+    width:95%;
+
+    margin:35px auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+}
+
+.timeline-card{
+
+    background:#1b2436;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+.patient-dashboard.light .timeline-card{
+
+    background:white;
+
+    color:#111827;
+
+}
+
+.timeline-card h2{
+
+    color:#14b8a6;
+
+    margin-bottom:20px;
+
+}
+
+/* ===========================
+   TIMELINE ITEMS
+=========================== */
+
+.timeline-item{
+
+    padding:18px;
+
+    border-radius:15px;
+
+    background:#25324a;
+
+    margin-bottom:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    border-left:5px solid transparent;
+
+    border:2px solid transparent;
+
+}
+
+.patient-dashboard.light .timeline-item{
+
+    background:#eef4ff;
+    color:#111827;
+
+}
+
+.patient-dashboard.light .timeline-item h4{
+
+    color:#111827;
+
+}
+
+.patient-dashboard.light .timeline-item p{
+
+    color:#475569;
+
+}
+
+.timeline-item:hover{
+
+    transform:translateX(6px);
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.timeline-item.active{
+
+    background:#2563eb;
+
+    color:white;
+
+    border-left:5px solid #14b8a6;
+
+    border:2px solid #14b8a6;
+
+    transform:scale(1.02);
+
+    box-shadow:0 8px 20px rgba(37,99,235,.35);
+
+}
+
+.timeline-item.active h4,
+.timeline-item.active p{
+
+    color:white !important;
+
+}
+.patient-dashboard.light .timeline-item.active h4,
+.patient-dashboard.light .timeline-item.active p{
+
+    color:white;
+
+}
+
+.timeline-item h4{
+
+    margin-bottom:8px;
+
+    font-size:18px;
+
+}
+
+.timeline-item p{
+
+    font-size:14px;
+    color:#d1d5db;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.dashboard-footer{
+
+    margin-top:50px;
+
+    text-align:center;
+
+    padding:30px;
+
+    opacity:.8;
+
+}
+
+.dashboard-footer h3{
+
+    color:#14b8a6;
+
+    margin-bottom:10px;
+
+}
+
+/* ===========================
+   LOADING PAGE
+=========================== */
+
+.loading-page{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+    background:#071328;
+
+    color:white;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.timeline-container{
+
+grid-template-columns:1fr;
+
+}
+
+.dashboard-header h1{
+
+font-size:36px;
+
+}
+
+.brand h2{
+
+font-size:28px;
+
+}
+
+}
+/* ===========================
+   LIGHT MODE TIMELINE FIX
+=========================== */
+
+.patient-dashboard.light .timeline-item{
+    background:#eef4ff;
+    color:#111827;
+}
+
+.patient-dashboard.light .timeline-item h4{
+    color:#111827 !important;
+}
+
+.patient-dashboard.light .timeline-item p{
+    color:#475569 !important;
+}
+
+.patient-dashboard.light .timeline-item.active{
+    background:#2563eb;
+    color:white;
+}
+
+.patient-dashboard.light .timeline-item.active h4,
+.patient-dashboard.light .timeline-item.active p{
+    color:white !important;
+}

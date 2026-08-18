@@ -1,0 +1,267 @@
+/* ===============================
+   PATIENT WORKSPACE
+=============================== */
+
+.patient-workspace{
+    width:100%;
+    margin-top:20px;
+}
+
+/* ===============================
+   TOP LAYOUT
+=============================== */
+
+.workspace-top{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    margin-bottom:30px;
+
+    align-items:start;
+}
+
+.workspace-bottom{
+    margin-top:20px;
+}
+
+/* ===============================
+   PATIENT PROFILE
+=============================== */
+
+.patient-profile-card{
+    padding:25px;
+    border-radius:18px;
+}
+
+.patient-profile-card h2{
+    margin-bottom:20px;
+}
+
+.patient-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.patient-grid strong{
+    display:block;
+    color:#1976d2;
+    margin-bottom:6px;
+}
+
+.patient-grid p{
+    margin:0;
+}
+
+/* ===============================
+   TIMELINE
+=============================== */
+
+.timeline-card{
+    padding:25px;
+    border-radius:18px;
+
+    height:fit-content;
+}
+
+.timeline-card h2{
+    margin-bottom:20px;
+}
+
+.visit-card{
+    padding:14px 18px;
+    border-radius:14px;
+    margin-bottom:12px;
+    cursor:pointer;
+
+    display:block;
+
+    height:auto;
+
+    min-height:unset;
+
+    max-height:fit-content;
+
+    transition:.3s;
+}
+
+.visit-card:hover{
+    transform:translateY(-3px);
+}
+
+.visit-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+.visit-card h3{
+    margin:0;
+    font-size:18px;
+}
+
+.visit-card p{
+    margin:5px 0 0;
+    font-size:15px;
+}
+
+.visit-card.active{
+    border-left:6px solid #1976d2;
+}
+
+/* ===============================
+   VISIT DETAILS
+=============================== */
+
+.visit-details-card{
+    padding:25px;
+    border-radius:18px;
+    margin-bottom:25px;
+}
+
+/* ===============================
+   SENSOR + PRESCRIPTION
+=============================== */
+
+.details-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.sensor-card,
+.prescription-card{
+    padding:22px;
+    border-radius:18px;
+    height:100%;
+}
+
+.sensor-card p,
+.prescription-card p{
+    margin:12px 0;
+    line-height:1.6;
+}
+
+/* ===============================
+   ADD VISIT
+=============================== */
+
+.add-visit-card{
+    margin-top:30px;
+    padding:25px;
+    border-radius:18px;
+}
+
+/* ===============================
+   SECTION TITLES
+=============================== */
+
+.section-title{
+    margin-bottom:18px;
+}
+
+/* ===============================
+   DARK MODE
+=============================== */
+
+.dark-dashboard .patient-profile-card,
+.dark-dashboard .timeline-card,
+.dark-dashboard .visit-details-card,
+.dark-dashboard .sensor-card,
+.dark-dashboard .prescription-card,
+.dark-dashboard .add-visit-card{
+
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    color:white;
+}
+
+.dark-dashboard .patient-grid strong{
+    color:#8cc8ff;
+}
+
+.dark-dashboard .visit-card{
+    background:rgba(255,255,255,.05);
+    color:white;
+}
+
+.dark-dashboard .visit-card.active{
+    background:rgba(25,118,210,.22);
+    border-left:6px solid #4dabff;
+}
+
+.dark-dashboard .sensor-card strong,
+.dark-dashboard .prescription-card strong{
+    color:#8cc8ff;
+}
+
+/* ===============================
+   LIGHT MODE
+=============================== */
+
+.light-dashboard .patient-profile-card,
+.light-dashboard .timeline-card,
+.light-dashboard .visit-details-card,
+.light-dashboard .sensor-card,
+.light-dashboard .prescription-card,
+.light-dashboard .add-visit-card{
+
+    background:white;
+    border:1px solid #dce8ff;
+    color:#1d3557;
+}
+
+.light-dashboard .patient-grid strong{
+    color:#1976d2;
+}
+
+.light-dashboard .visit-card{
+    background:#f8fbff;
+    color:#1d3557;
+}
+
+.light-dashboard .visit-card.active{
+    background:#dcebff;
+    border-left:6px solid #1976d2;
+}
+
+.light-dashboard .sensor-card strong,
+.light-dashboard .prescription-card strong{
+    color:#1976d2;
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+
+@media(max-width:900px){
+
+.workspace-top{
+    grid-template-columns:1fr;
+}
+
+.details-grid{
+    grid-template-columns:1fr;
+}
+
+.patient-grid{
+    grid-template-columns:1fr;
+}
+
+}
+.timeline-card{
+
+    padding:25px;
+
+    border-radius:18px;
+
+    display:block;
+
+    height:auto;
+
+    max-height:600px;
+
+    overflow-y:auto;
+}

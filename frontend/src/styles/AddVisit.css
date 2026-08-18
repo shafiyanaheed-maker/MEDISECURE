@@ -1,0 +1,90 @@
+.consultation-form{
+    margin-top:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.form-input{
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    font-size:15px;
+    resize:vertical;
+    min-height:90px;
+    outline:none;
+}
+
+.followup-section{
+    margin-top:25px;
+}
+
+.followup-section label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.date-input{
+    padding:12px;
+    border-radius:10px;
+    font-size:15px;
+}
+
+.save-btn{
+    margin-top:25px;
+    background:#1976d2;
+    color:white;
+    border:none;
+    padding:14px 28px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.save-btn:hover{
+    background:#125ab0;
+}
+
+/* ---------- DARK MODE ---------- */
+
+.dark-dashboard .form-input,
+.dark-dashboard .date-input{
+    background:rgba(255,255,255,.08);
+    color:white;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.dark-dashboard .form-input::placeholder{
+    color:#cfd8dc;
+}
+
+.dark-dashboard .followup-section label{
+    color:white;
+}
+
+/* ---------- LIGHT MODE ---------- */
+
+.light-dashboard .form-input,
+.light-dashboard .date-input{
+    background:white;
+    color:#1d3557;
+    border:1px solid #dce8ff;
+}
+
+.light-dashboard .followup-section label{
+    color:#1d3557;
+}
+
+@media(max-width:900px){
+
+.form-grid{
+    grid-template-columns:1fr;
+}
+
+}

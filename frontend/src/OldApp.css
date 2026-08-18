@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(
+      rgba(10, 25, 47, 0.85),
+      rgba(10, 25, 47, 0.85)
+    ),
+    url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600")
+      center/cover no-repeat;
+  min-height: 100vh;
+}
+
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portal-card {
+  width: 520px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 20px;
+  padding: 45px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.logo-section {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.logo-icon {
+  font-size: 65px;
+}
+
+.portal-title {
+  color: #0f172a;
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.portal-subtitle {
+  color: #64748b;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.section-title {
+  text-align: center;
+  color: #1e293b;
+  margin-bottom: 25px;
+}
+
+.role-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  margin-top: 15px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+}
+
+.role-button:hover {
+  transform: translateY(-3px);
+}
+
+.doctor {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+.patient {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.fingerprint {
+  background: linear-gradient(135deg, #0891b2, #0e7490);
+}
+
+.face {
+  background: linear-gradient(135deg, #374151, #111827);
+}
+
+.back-button {
+  border: none;
+  background: #e2e8f0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 35px;
+  color: #64748b;
+  font-size: 13px;
+}

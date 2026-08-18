@@ -1,0 +1,272 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",sans-serif;
+}
+
+.patient-page{
+  min-height:100vh;
+  padding:30px 60px;
+}
+
+/* DARK MODE */
+
+.patient-page.dark{
+
+  background:
+    radial-gradient(circle at top left,
+    rgba(37,99,235,.18),
+    transparent 30%),
+
+    radial-gradient(circle at top right,
+    rgba(20,184,166,.15),
+    transparent 30%),
+
+    linear-gradient(135deg,#071328,#0f172a);
+
+  color:white;
+}
+
+/* LIGHT MODE */
+
+.patient-page.light{
+
+  background:
+    radial-gradient(circle at top left,
+    rgba(37,99,235,.10),
+    transparent 30%),
+
+    radial-gradient(circle at top right,
+    rgba(20,184,166,.10),
+    transparent 30%),
+
+    linear-gradient(135deg,#eef5ff,#ffffff);
+
+  color:#0f172a;
+}
+
+.top-navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand-section{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.brand-logo{
+  width:70px;
+  height:70px;
+  border-radius:20px;
+
+  background:
+    linear-gradient(135deg,#2563eb,#14b8a6);
+}
+
+.brand-section h1{
+  color:#2563eb;
+  font-size:52px;
+}
+
+.brand-section p{
+  color:#14b8a6;
+  letter-spacing:4px;
+}
+
+.heading-section{
+  text-align:center;
+  margin-top:40px;
+}
+
+.welcome-badge{
+  display:inline-block;
+  padding:12px 35px;
+  border-radius:40px;
+  background:rgba(20,184,166,.15);
+  color:#14b8a6;
+}
+
+.heading-section h1{
+  font-size:60px;
+  margin:25px 0;
+}
+
+.ecg-line{
+  width:220px;
+  height:3px;
+  background:#14b8a6;
+  margin:auto;
+}
+
+.heading-section p{
+  margin-top:20px;
+  color:#cbd5e1;
+  font-size:20px;
+}
+
+.back-btn{
+  margin-top:30px;
+
+  padding:12px 28px;
+
+  border-radius:50px;
+
+  border:none;
+
+  cursor:pointer;
+
+  font-weight:600;
+}
+
+.login-wrapper{
+  margin-top:50px;
+
+  display:flex;
+  justify-content:center;
+  gap:30px;
+
+  flex-wrap:wrap;
+}
+
+.login-card{
+  width:400px;
+  min-height:450px;
+
+  border-radius:35px;
+
+  overflow:hidden;
+
+  background:rgba(255,255,255,.06);
+}
+
+.card-top{
+  height:150px;
+}
+
+.blue-bg{
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+}
+
+.green-bg{
+  background:linear-gradient(135deg,#14b8a6,#2dd4bf);
+}
+
+.purple-bg{
+  background:linear-gradient(135deg,#8b5cf6,#a855f7);
+}
+
+.card-content{
+  padding:35px;
+  text-align:center;
+}
+
+.card-content h2{
+  margin-bottom:25px;
+}
+
+.card-content input{
+  width:100%;
+
+  padding:16px;
+
+  border:none;
+
+  border-radius:15px;
+
+  margin-bottom:18px;
+}
+
+.card-content button{
+  width:100%;
+
+  padding:16px;
+
+  border:none;
+
+  border-radius:50px;
+
+  cursor:pointer;
+
+  color:white;
+
+  background:
+  linear-gradient(135deg,#2563eb,#14b8a6);
+
+  font-size:17px;
+}
+
+.auth-circle{
+  width:110px;
+  height:110px;
+
+  margin:20px auto;
+
+  border-radius:50%;
+
+  background:
+  linear-gradient(135deg,#2563eb,#14b8a6);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:34px;
+  font-weight:700;
+}
+
+.card-content p{
+  margin-bottom:25px;
+  color:#cbd5e1;
+}
+
+footer{
+  text-align:center;
+  margin-top:50px;
+  padding-bottom:30px;
+}
+
+footer h3{
+  color:#14b8a6;
+  margin-bottom:10px;
+}
+/* LIGHT MODE CARDS */
+
+.patient-page.light .login-card{
+  background:white;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.patient-page.light .card-content p{
+  color:#64748b;
+}
+
+.patient-page.light .heading-section p{
+  color:#64748b;
+}
+
+/* DARK MODE CARDS */
+
+.patient-page.dark .login-card{
+  background:rgba(255,255,255,.06);
+}
+
+.patient-page.dark .card-content p,
+.patient-page.dark .heading-section p{
+  color:#cbd5e1;
+}
+
+/* THEME BOX */
+
+.patient-page.dark .theme-box{
+  background:#334155;
+  color:white;
+}
+
+.patient-page.light .theme-box{
+  background:white;
+  color:#0f172a;
+}
